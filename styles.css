@@ -1,0 +1,246 @@
+@charset "utf-8";
+/**
+ * File contents
+ * 1. Base page/element styling
+ * 2. Site header
+ * 3. Navigation primary
+ * 4. Slider
+ * 5. Page content
+ * 6. Footer
+ * 7. Google Map
+ * 8. Columns
+ * ?. Smaller screen styles
+ * ?. Medium screen styles
+ * ?. Larger screen styles
+ */
+
+/* 1. Base page/element styling */
+html { min-width: 320px; }
+
+body {
+  padding: 0;
+  background-color: rgba(193, 230, 204, 0.2);
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", "Montserrat", sans-serif;
+}
+
+h1, h2, h3 { font-weight: 700; }
+h4, h5, h6 { font-weight: 500; }
+
+a,
+a:hover,
+a:focus { text-decoration: none; }
+
+hr { border: 0.5px solid white; }
+
+/* 2. Site header */
+header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(193, 230, 204, 0.2);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* 3. Navigation primary */
+.nav-primary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #738f7d;
+}
+
+.nav-primary div {
+  width: 12em;
+  flex: 1 1;
+  text-align: center;
+  cursor: pointer;
+  border: 0.5px solid darkgray;
+}
+
+.nav-primary > .active,
+.nav-primary > div:hover,
+.nav-primary > div:focus,
+.nav-primary > div:active {
+  background-color: rgba(193, 230, 204, 0.2);
+}
+
+.nav-primary > .active a,
+.nav-primary > div:hover a,
+.nav-primary > div:focus a,
+.nav-primary > div:active a {
+  color: #2d5542;
+}
+
+.nav-primary a {
+  display: inline-block;
+  width: 100%;
+  padding: 0.45em 1em;
+
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: 300;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* 4. Slider */
+.slider { overflow: hidden; }
+
+.slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  transition: left 0.5s ease-in-out;
+}
+
+.slider img {
+  width: 20%;
+  float: left;
+}
+
+/* 5. Page content */
+.main-content { padding-top: 1em; }
+
+.thumbnail {
+  border: none;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pic1 img {
+  width: 100%;
+  max-height: 75%;
+  border-style : solid;
+  border-width: 10px;
+  border-color: white;
+}
+
+figcaption {
+  background: white;
+  text-align: center;
+  font-size: 12px;
+  border-bottom: 5px;
+  border-style: solid;
+  border-color: white;
+}
+
+.pictures {
+  padding: 25px;
+  float:left;
+}
+.pictures img { height: 50px; }
+
+.info {
+  padding: 25px;
+  float:right;
+  text-align: center;
+}
+
+.contact {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+#menu-container {
+  width: 100%;
+  height: 400px;
+  padding: 20px'
+}
+
+#link-list li a { color: black; }
+
+input, textarea {
+  padding: 0.3em;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/*
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+*/
+
+.phone { float: left; }
+
+.panel-title { text-align: center; }
+.panel-title a:hover,
+.panel-title a:focus { border-bottom: 1px solid currentColor; }
+
+.panel-body { font-size: 0.9em; }
+
+/* 6. Footer */
+footer {
+  text-align: center;
+  font-size: 14px;
+}
+ footer img { height: 65px; }
+
+/* 7. Google Map */
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* 8. Columns */
+/*
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+*/
+
+/* ?. Smaller screen styles */
+@media (max-width: 320px) {
+  .slider { content: "still"; }
+
+  .column, .col-25, .col-75 {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* ?. Medium screen styles */
+@media screen and (max-width: 600px) {
+  .column, .col-25, .col-75 {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .contact { width: 100%; }
+}
+
+/* ?. Larger screen styles */
+@media (min-width: 768px) {
+  .slider figure { margin-top: -15rem; }
+
+  .column, .col-25, .col-75 {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #link-list { display: none; }
+}
